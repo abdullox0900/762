@@ -1,0 +1,31 @@
+// Common title styles
+.title {
+    font-family: $font-family-title;
+    font-weight: $font-weight-medium;
+    line-height: 120%;
+    font-size: $font-size-3xl;
+
+    // Medium title
+    &--medium {
+        font-size: $font-size-xl;
+        font-family: $font-family-title;
+    }
+}
+
+// Common description styles
+.description {
+    font-family: $font-family-main;
+    font-weight: $font-weight-medium;
+    line-height: 120%;
+    letter-spacing: -0.4%;
+    font-size: $font-size-base;
+}
+
+// Common text styles
+.text {
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: 120%;
+    letter-spacing: -0.4%;
+    font-family: $font-family-main;
+}

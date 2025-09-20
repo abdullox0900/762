@@ -1,0 +1,58 @@
+// ==========================================================================
+// BUTTON COMPONENT
+// ==========================================================================
+
+.btn {
+    @include gradient-border(#484848, #363336, 1px, 0.5);
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    line-height: 100%;
+    padding: $spacing-md $spacing-md-2;
+    background-color: $white-12;
+    border-radius: 1rem;
+    color: $white;
+    transition: $transition;
+    cursor: pointer;
+    backdrop-filter: blur(444px);
+    position: relative;
+
+    &:hover {
+        background-color: $yellow-100;
+        color: $black;
+    }
+
+    &:hover img {
+        filter: brightness(0) saturate(100%);
+    }
+}
+
+.btn--hover {
+    &:hover img {
+        filter: brightness(0) saturate(100%);
+    }
+}
+
+.btn-sm {
+    width: 4.6rem;
+    height: 4.6rem;
+    @include flexbox(row, center, center);
+    background: $white-12;
+    border-radius: 8px;
+    color: $white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+
+    &:hover {
+        background: rgba($white, 0.2);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}

@@ -1,0 +1,65 @@
+// ==========================================================================
+// VARIABLES
+// ==========================================================================
+
+// COLORS
+$white: #ffffff;
+$white-12: rgba(255, 255, 255, 0.12);
+$white-40: rgba(255, 255, 255, 0.4);
+
+
+$black: #000000;
+$black-13: #131313;
+$black-300: #303030;
+$black-900: #090909;
+
+$yellow-100: #FFE0A2;
+$yellow-100-hover: #FFEFD1;
+
+// TYPOGRAPHY
+$font-family-main: 'Gilroy',
+-apple-system,
+BlinkMacSystemFont,
+sans-serif;
+$font-family-title: 'TRY Grtsk',
+Georgia,
+serif;
+
+$font-size-xs: 1.2rem; // 12px
+$font-size-sm: 1.4rem; // 14px
+$font-size-base: 1.6rem; // 16px
+$font-size-lg: 1.8rem; // 18px
+$font-size-xl: 2.1rem; // 20px
+$font-size-2xl: 2.4rem; // 24px
+$font-size-3xl: 3.4rem; // 34px
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.25;
+$line-height-base: 1.6;
+$line-height-loose: 1.8;
+$line-height-hero-title: 110%;
+$line-height-hero-description: 120%;
+
+$spacing-xs: 0.4rem; // 4px
+$spacing-sm: 0.8rem; // 8px
+$spacing-sm-2: 1.2rem; // 12px
+$spacing-sm-3: 1.4rem; // 14px
+$spacing-md: 1.6rem; // 16px
+$spacing-md-2: 1.8rem; // 18px
+$spacing-lg: 2.4rem; // 24px
+$spacing-xl: 3.2rem; // 32px
+
+$section-spacing: 4rem;
+$section-spacing-lg: 22rem;
+
+$border-radius: 1rem; // 10px
+$border-radius-sm: 0.6rem; // 6px
+$border-radius-lg: 1.6rem; // 16px
+$border-width: 0.1rem; // 1px
+$box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+$transition: all 0.3s ease;

@@ -1,0 +1,207 @@
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+
+.footer {
+    background-color: $black;
+    color: $white;
+    padding: 4.8rem 0 7.3rem;
+    position: relative;
+
+    &__top {
+        padding-top: 4.8rem;
+        margin-bottom: 4.8rem;
+        border-top: 1px solid rgba($white, 0.12);
+    }
+
+    &__content {
+        @include flexbox(row, start, space-between);
+
+        align-items: start;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 2.4rem;
+        }
+    }
+
+    // Logo Section
+    &__logo {
+        img {
+            width: 18rem;
+            height: 8.4rem;
+        }
+    }
+
+    &__content-inner {
+        @include flexbox-gap(row, start, center, 10rem);
+    }
+
+    // Contact Section
+    &__contact {
+        max-width: 42.2rem;
+
+        &-item {
+            margin-bottom: 2.4rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-title {
+            font-size: $font-size-lg;
+            font-weight: $font-weight-medium;
+            color: $white;
+            margin-bottom: 2.4rem;
+            line-height: $line-height-tight;
+        }
+
+        &-text {
+            font-size: $font-size-base;
+            color: rgba($white, 0.5);
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 1.6rem;
+        margin-top: 2.4rem;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4rem;
+            height: 4rem;
+            color: $white;
+            transition: $transition;
+            border-radius: 50%;
+
+            &:hover {
+                color: $yellow-100;
+                transform: translateY(-2px);
+            }
+
+            svg {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+
+    // Services Section
+    &__services {
+        &-title {
+            font-size: $font-size-lg;
+            font-weight: $font-weight-medium;
+            color: $white;
+            margin-bottom: 2.4rem;
+            line-height: $line-height-tight;
+        }
+
+        &-list {
+            @include flexbox-gap(column, start, start, 1.2rem);
+        }
+
+        &-link {
+            display: block;
+            font-size: $font-size-base;
+            color: rgba($white, 0.5);
+            transition: $transition;
+
+            &:hover {
+                color: $yellow-100;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // About Section
+    &__about {
+        &-title {
+            font-size: $font-size-lg;
+            font-weight: $font-weight-medium;
+            color: $white;
+            margin-bottom: 2.4rem;
+        }
+
+        &-list {
+            @include flexbox-gap(column, start, start, 1.2rem);
+        }
+
+        &-link {
+            font-size: $font-size-base;
+            color: rgba($white, 0.5);
+            transition: $transition;
+
+            &:hover {
+                color: $yellow-100;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Bottom Section
+    &__bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 4.8rem;
+        @include flexbox(row, center, space-between);
+        gap: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2.4rem;
+        }
+    }
+
+    &__legal {
+        flex: 1;
+
+        &-text {
+            font-size: $font-size-sm;
+            color: rgba($white, 0.5);
+            line-height: $line-height-base;
+            margin: 0;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 6rem;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+    }
+
+    &__link {
+        font-size: $font-size-sm;
+        color: rgba($white, 0.5);
+        text-decoration: none;
+        transition: $transition;
+
+        &:hover {
+            color: $yellow-100;
+        }
+
+        &--underlined {
+            text-decoration: underline;
+        }
+    }
+}

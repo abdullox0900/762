@@ -1,0 +1,119 @@
+.programs-section {
+    margin: $section-spacing-lg 0; // Keep large padding on desktop
+}
+
+// ==========================================================================
+// PROGRAMS FILTER COMPONENT
+// ==========================================================================
+
+.programs-filter {
+    margin-bottom: $section-spacing;
+
+    &__wrapper {
+        @include flexbox(row, center, space-between);
+        padding: $spacing-sm-3 $spacing-md;
+        border: $border-width solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+    }
+
+    &__title {
+        @include flexbox-gap(row, center, center, $spacing-md);
+    }
+
+    &__buttons {
+        @include flexbox-gap(row, center, center, $spacing-sm);
+        align-items: stretch;
+    }
+
+    &__btn {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        .btn {
+            height: 100%;
+            min-height: 5.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"]:checked+.btn {
+            background-color: $yellow-100;
+            color: $black;
+        }
+    }
+}
+
+// ==========================================================================
+// PROGRAMS CONTENT COMPONENT
+// =============
+
+.programs-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(42rem, 100%), 1fr));
+    gap: 1.6rem;
+    margin-bottom: $section-spacing;
+}
+
+.programs-content {
+    margin-bottom: $section-spacing;
+
+    &__wrapper {
+        @include flexbox(row, start, space-between);
+    }
+
+    &__right {
+        @include flexbox(column, start, center);
+        max-width: 41rem;
+    }
+
+    &__description {
+        opacity: 0.5;
+        margin-bottom: $spacing-lg;
+    }
+
+    &__btn {
+        @include flexbox-gap(row, center, center, $spacing-xs);
+        color: $white;
+    }
+}
+
+// ==========================================================================
+// GIFT-CERTIFICATE COMPONENT
+// =============
+
+.gift-certificate {
+    @include flexbox(row, center, space-between);
+    padding: 10rem 6rem;
+    background-color: $black-13;
+    border-radius: 8px;
+
+    &__content {
+        @include flexbox(column, start, start);
+        max-width: 46.2rem;
+    }
+
+    &__title {
+        margin-bottom: $spacing-lg;
+    }
+
+    &__description {
+        margin-bottom: $spacing-lg;
+        opacity: 0.5;
+    }
+
+    &__image {
+        max-width: 59.6rem;
+        min-height: 45rem;
+    }
+
+    .btn {
+        @include flexbox-gap(row, center, start, 8.1rem);
+        padding: 1.4rem 1.6rem;
+    }
+}

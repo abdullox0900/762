@@ -1,0 +1,76 @@
+.map-section {
+    margin-bottom: $section-spacing-lg;
+    padding: 22.2rem 0;
+    background-image: url('../../src/images/photos/map-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__wrapper {
+        @include flexbox(row, start, space-between);
+    }
+
+    &__content {
+        @include flexbox(column, start, start);
+        width: 42rem;
+        background-color: #232323;
+        border-radius: 10px;
+        padding: 2.4rem;
+        @include gradient-border(#484848, #363336, 1px, 0.5);
+    }
+
+    &__title {
+        @include flexbox-gap(row, center, center, $spacing-sm-2);
+        margin-bottom: 4.8rem;
+
+        img {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+
+    &__description {
+        margin-bottom: $spacing-lg;
+        color: rgba($white, 0.5);
+        line-height: 120%;
+    }
+
+    &__buttons {
+        @include flexbox-gap(row, center, center, $spacing-sm-2);
+        margin-bottom: $spacing-lg;
+
+        .btn--active {
+            background-color: $yellow-100;
+            color: $black;
+        }
+    }
+
+    &__buttons-2 {
+        @include flexbox-gap(column, center, center, 2.8rem);
+    }
+
+    &__buttons-inner {
+        @include flexbox(column, center, center);
+        margin-bottom: $spacing-lg;
+        background-color: #181818;
+        border-radius: 10px;
+
+        button {
+            padding: 1.5rem;
+        }
+
+        img {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    &__buttons-inner-btn {
+        @include flexbox(row, center, center);
+    }
+
+    &__buttons-inner-btn--map {
+        padding: 1.5rem;
+        background-color: $yellow-100;
+        border-radius: 10px;
+    }
+}

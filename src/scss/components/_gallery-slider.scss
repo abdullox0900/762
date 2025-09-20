@@ -1,0 +1,241 @@
+// ==========================================================================
+// GALLERY SLIDER COMPONENT
+// ==========================================================================
+
+.gallery-slider {
+    margin-bottom: 35rem;
+    overflow: visible;
+}
+
+.gallery-swiper {
+    width: 100%;
+    max-width: calc(85.6rem * 2 + 2.4rem);
+    height: 61.2rem;
+    position: relative;
+    overflow: visible;
+    margin: 0 auto;
+}
+
+.gallery-slide {
+    width: 85.6rem !important;
+    height: 61.2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+        }
+    }
+}
+
+// ==========================================================================
+// GALLERY NAVIGATION
+// ==========================================================================
+
+.gallery-navigation {
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    &__wrapper {
+        @include flexbox(row, center, space-between);
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+}
+
+// ==========================================================================
+// GALLERY PAGINATION
+// ==========================================================================
+
+.gallery-pagination {
+    @include flexbox(column, center, center);
+    gap: 1.8rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: 1;
+
+    &__progress {
+        @include flexbox-gap(row, end, space-between, 4rem);
+        width: 49.3rem;
+        height: 3.7rem;
+        position: relative;
+
+        .line {
+            width: 1px;
+            background: rgba($white, 0.3);
+            transition: all 0.3s ease;
+
+            &:nth-child(1) {
+                height: 3.7rem;
+            }
+
+            &:nth-child(2) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(3) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(4) {
+                height: 3.7rem;
+            }
+
+            &:nth-child(5) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(6) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(7) {
+                height: 3.7rem;
+                background: #FFE0A2;
+            }
+
+            // Active line
+            &:nth-child(8) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(9) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(10) {
+                height: 3.7rem;
+            }
+
+            &:nth-child(11) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(12) {
+                height: 1.9rem;
+            }
+
+            &:nth-child(13) {
+                height: 3.7rem;
+            }
+
+            &:nth-child(14) {
+                height: 3.7rem;
+            }
+
+            &.active {
+                background: #FFE0A2 !important;
+            }
+        }
+    }
+
+    &__bullets {
+        @include flexbox(row, center, space-between);
+        width: 51rem;
+    }
+
+    &__number {
+        font-size: 1.6rem;
+        color: rgba($white, 0.4);
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        &--active {
+            color: $white;
+        }
+
+        &:hover {
+            color: rgba($white, 0.8);
+        }
+    }
+}
+
+// ==========================================================================
+// GALLERY NAV BUTTONS
+// ==========================================================================
+
+.gallery-nav {
+    @include flexbox-gap(row, center, center, $spacing-md);
+
+    &--prev {
+        order: -1;
+    }
+
+    &--next {
+        order: 1;
+    }
+
+    &__btn {
+        width: 5.6rem;
+        height: 5.6rem;
+        @include flexbox(row, center, center);
+        background: $black-13;
+        border-radius: 8px;
+        color: $white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba($white, 0.2);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+
+            &:hover {
+                background: rgba($white, 0.1);
+                border-color: rgba($white, 0.2);
+                transform: none;
+            }
+        }
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+}
+
+// ==========================================================================
+// RESPONSIVE
+// ==========================================================================
+
+@media (max-width: 768px) {
+    .gallery-swiper {
+        height: 40rem;
+    }
+
+    .gallery-slide {
+        width: 90vw !important;
+        height: 40rem;
+    }
+
+    .gallery-navigation {
+        &__wrapper {
+            padding: 0 2rem;
+            flex-direction: column;
+            gap: $spacing-lg;
+        }
+    }
+
+    .gallery-pagination {
+        &__progress {
+            width: 15rem;
+        }
+    }
+}

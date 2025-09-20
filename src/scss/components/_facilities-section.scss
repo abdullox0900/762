@@ -1,0 +1,154 @@
+// ==========================================================================
+// FACILITIES SECTION
+// ==========================================================================
+
+.facilities-section {
+    margin-bottom: $section-spacing-lg;
+    position: relative;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    &__header {
+        @include flexbox(row, start, space-between);
+    }
+
+    &__title {
+        max-width: 45rem;
+        color: $white;
+    }
+
+    &__description {
+        margin-left: auto;
+        max-width: 32.6rem;
+        color: rgba($white, 0.5);
+        line-height: $line-height-base;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            gap: 2.4rem;
+        }
+    }
+}
+
+.facilities-block {
+    position: relative;
+    height: 57rem;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        height: 40rem;
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        // Dark overlay
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg,
+                    rgba(0, 0, 0, 0.4) 0%,
+                    rgba(0, 0, 0, 0.6) 100%);
+            z-index: 2;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+
+        @media (max-width: 768px) {
+            padding: 2.4rem;
+        }
+    }
+
+    &__title {
+        color: $white;
+        margin: 0 0 1rem 0;
+        @include flexbox-gap(row, center, start, 1rem);
+
+
+        svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            color: $yellow-100;
+            transition: $transition;
+        }
+
+        &:hover svg {
+            transform: translateX(4px);
+        }
+    }
+
+
+    &__description {
+        color: rgba($white, 0.5);
+        margin-bottom: 1rem;
+        max-width: 40rem;
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: underline;
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+        transition: $transition;
+        align-self: flex-start;
+
+        &:hover {
+            color: $yellow-100;
+        }
+    }
+
+    &__content--shop {
+        padding-bottom: 6.3rem;
+    }
+
+
+    // Restaurant specific styles
+    &--restaurant {
+        .facilities-block__title {
+            color: $white;
+        }
+    }
+
+    // Shop specific styles
+    &--shop {
+        .facilities-block__title {
+            color: $white;
+        }
+    }
+}

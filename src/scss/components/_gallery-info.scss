@@ -1,0 +1,188 @@
+// ==========================================================================
+// GALLERY INFO SECTION
+// ==========================================================================
+
+.gallery-info {
+    min-height: 60.6rem;
+    margin-bottom: $section-spacing-lg;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+
+
+    &__wrapper {
+        @include flexbox(row, center, space-between);
+        min-height: 60.6rem;
+        height: 60.6rem;
+        max-width: 100%;
+        overflow: hidden;
+
+    }
+
+    // ==========================================================================
+    // LEFT CONTENT
+    // ==========================================================================
+
+    &__content {
+        position: relative;
+        left: 2rem;
+        width: 38.5rem;
+        max-width: 38.5rem;
+        height: 100%;
+        min-height: 100%;
+        padding: 4rem;
+        @include flexbox(column, start, start);
+        gap: $spacing-lg;
+        flex-shrink: 0;
+        border-radius: 8px;
+        @include gradient-border(#484848, #363336, 1px, 0.5);
+        background: linear-gradient(90deg, rgba(30, 31, 31, 1) 0%, rgba(24, 25, 27, 1) 50%);
+        z-index: 2;
+        @include flexbox(column, start, space-between);
+
+    }
+
+    &__title {
+        margin-bottom: 4rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid rgba($white, 0.12);
+    }
+
+    &__subtitle {
+        @include flexbox-gap(row, center, start, $spacing-lg);
+        gap: $spacing-md;
+        margin-bottom: $spacing-lg;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    &__description {
+        color: rgba($white, 0.7);
+        line-height: 1.6;
+        margin-bottom: $spacing-xl;
+    }
+
+    &__buttons {
+        @include flexbox-gap(row, center, start, $spacing-sm);
+    }
+
+    &__btn {
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &--active {
+            background: $yellow-100;
+            color: $black;
+            border-color: $yellow-100;
+
+            &:hover {
+                background: $yellow-100;
+                color: $black;
+            }
+        }
+    }
+
+    // ==========================================================================
+    // RIGHT SLIDER
+    // ==========================================================================
+
+    &__slider {
+        flex: 1;
+        min-width: 0;
+        height: 60.6rem;
+        max-height: 60.6rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    // Swiper container
+    .gallery-info-swiper {
+        width: 100%;
+        height: 100%;
+        max-height: 60.6rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    // Slide
+    .gallery-info-slide {
+        width: 100%;
+        height: 100%;
+        max-height: 60.6rem;
+        overflow: hidden;
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            max-height: 60.6rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    // Navigation
+    &__navigation {
+        position: absolute;
+        bottom: 4rem;
+        right: 4rem;
+        z-index: 10;
+        @include flexbox-gap(row, center, center, $spacing-sm);
+    }
+
+    &__nav-btn--next {
+        background-color: rgba($white, 0.25);
+    }
+}
+
+// ==========================================================================
+// RESPONSIVE
+// ==========================================================================
+
+@media (max-width: 1024px) {
+    .gallery-info {
+        height: auto;
+
+        &__wrapper {
+            flex-direction: column;
+            gap: $spacing-xl;
+        }
+
+        &__content {
+            width: 100%;
+            padding: 2rem;
+        }
+
+        &__slider {
+            width: 100%;
+            height: 50rem;
+        }
+
+        &__navigation {
+            bottom: 2rem;
+            right: 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-info {
+        &__content {
+            padding: 1.5rem;
+        }
+
+        &__buttons {
+            flex-wrap: wrap;
+        }
+
+        &__slider {
+            height: 40rem;
+        }
+    }
+}

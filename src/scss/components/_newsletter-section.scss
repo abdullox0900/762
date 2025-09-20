@@ -1,0 +1,123 @@
+// ==========================================================================
+// NEWSLETTER SECTION
+// ==========================================================================
+
+.newsletter-section {
+    position: relative;
+
+    &__wrapper {}
+
+    &__title {
+        @include flexbox(row, center, space-between);
+        color: $white;
+        font-size: 4.8rem;
+        padding-bottom: 3.5rem;
+        margin-bottom: 2.4rem;
+        border-bottom: 1px solid $white;
+    }
+
+    &__text {
+        color: rgba($white, 0.5);
+        margin-bottom: 2.4rem;
+    }
+}
+
+.newsletter-form {
+    &__button {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: $border-radius;
+        padding: 1.2rem;
+        color: $white;
+        cursor: pointer;
+        transition: $transition;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 4.8rem;
+        height: 4.8rem;
+
+        &:hover {
+            background-color: $yellow-100;
+            color: $black;
+
+            img {
+                filter: brightness(0) saturate(100%);
+            }
+        }
+
+        svg {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}
+
+.newsletter-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    &__custom {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.4rem;
+        flex-shrink: 0;
+        transition: $transition;
+        margin-top: 0.2rem;
+
+        // Checkmark
+        &::after {
+            content: '';
+            position: absolute;
+            display: none;
+            left: 0.6rem;
+            top: 0.2rem;
+            width: 0.6rem;
+            height: 1rem;
+            border: solid $white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    &__input:checked~&__custom {
+        background-color: rgba(255, 255, 255, 0.2);
+
+        &::after {
+            display: block;
+        }
+    }
+
+    &__input:focus~&__custom {
+        box-shadow: 0 0 0 2px rgba(255, 224, 162, 0.3);
+    }
+
+    &__text {
+        color: rgba(255, 255, 255, 0.5);
+        line-height: $line-height-base;
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: underline;
+        transition: $transition;
+
+        &:hover {
+            color: $yellow-100;
+        }
+    }
+}

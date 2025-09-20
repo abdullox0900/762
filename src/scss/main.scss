@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import "base/fonts";
+
+
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// base
+@import "base/normalize";
+@import "base/general";
+@import "base/typography";
+@import "base/visually-hidden";
+
+// Layout
+@import "layout/container";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/navigation";
+
+// Components
+@import "components/main";
+@import "components/button";
+@import "components/hero";
+@import "components/gallery-slider";
+@import "components/gallery-info";
+@import "components/promotions-slider";
+@import "components/facilities-section";
+@import "components/newsletter-section";
+
+// Components Programs
+@import "components/programs-section";
+@import "components/program-card";
+@import "components/map-section";

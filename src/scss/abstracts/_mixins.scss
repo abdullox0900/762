@@ -1,0 +1,107 @@
+// ==========================================================================
+// MIXINS
+// ==========================================================================
+
+@mixin gradient-border($start-color: #484848, $end-color: #363336, $border-width: 1px, $opacity: 1) {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: $border-width solid transparent;
+        border-radius: inherit;
+        background: linear-gradient(90deg,
+                rgba($start-color, $opacity) 0%,
+                rgba($end-color, $opacity) 100%) border-box;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(#fff 0 0);
+        mask:
+            linear-gradient(#fff 0 0) padding-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        z-index: 2;
+        pointer-events: none;
+    }
+}
+
+// TYPOGRAPHY MIXINS
+
+@mixin font-size($size) {
+    font-size: $size;
+}
+
+@mixin body-font($size: $font-size-base, $weight: $font-weight-normal) {
+    font-family: $font-family-main;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height-base;
+}
+
+@mixin body-font-title($size: $font-size-base, $weight: $font-weight-normal) {
+    font-family: $font-family-title;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height-hero-description;
+}
+
+@mixin flexbox($direction: row, $align: center, $justify: space-between) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin flexbox-gap($direction: row, $align: center, $justify: space-between, $gap: $spacing-md) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+// BACKGROUND IMAGE MIXIN
+@mixin background-image($url, $position: center center, $size: cover, $repeat: no-repeat) {
+    background-image: url($url);
+    background-position: $position;
+    background-size: $size;
+    background-repeat: $repeat;
+}
+
+@mixin button() {
+    @include body-font($font-size-base, $font-weight-medium);
+    padding: $spacing-md $spacing-md-2;
+    background-color: $white-12;
+    border-radius: $border-radius;
+    color: $white;
+    transition: $transition;
+    cursor: pointer;
+    backdrop-filter: blur(444px);
+    position: relative;
+    @include gradient-border($start-color: #484848, $end-color: #363336, $border-width: 1px, $opacity: 1);
+
+    &:hover {
+        background-color: $yellow-100;
+        color: $black;
+    }
+}
+
+@mixin button-active() {
+    background-color: $yellow-100;
+    color: $black;
+    border: none;
+}
+
+
+
+// HERO SECTION SPECIFIC MIXIN
+@mixin hero-background($image-path) {
+    @include background-image($image-path);
+    display: flex;
+    position: relative;
+}
